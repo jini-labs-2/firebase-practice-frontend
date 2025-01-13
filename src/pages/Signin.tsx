@@ -6,12 +6,10 @@ const Signin = () => {
 
   const handleEmailSignin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('--s0000--', email, password); 
   }
 
   const handleGoogleSignin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log('--s0001-google signin-', ); 
   }
 
   return (
