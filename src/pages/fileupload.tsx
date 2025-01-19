@@ -11,7 +11,7 @@ const Fileupload = () => {
     console.log(uploadFile?.name);
     const storageRef = 
       uploadFile?.name ?
-      ref(fbStorage, `${uploadFile.name}`) : 
+      ref(fbStorage(), `${uploadFile.name}`) : 
       null;
     if (storageRef && uploadFile) {
       // uploadBytes(storageRef, uploadFile).then(() => {

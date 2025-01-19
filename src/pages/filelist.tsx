@@ -1,5 +1,7 @@
-import { getStorage, listAll, ref } from 'firebase/storage';
+// import { getStorage, listAll, ref } from 'firebase/storage';
 import React, { useState } from 'react'
+import { fbRef, fbStorage } from '../firebase';
+import { listAll } from 'firebase/storage';
 
 interface FileList {
   name: string,
@@ -15,8 +17,8 @@ const Filelist = () => {
     e.preventDefault();
 
     setFilelist([]);
-    const storageRef = getStorage();
-    const listRef = ref(storageRef, queryfile);
+    const storageRef = fbStorage();
+    const listRef = fbRef(storageRef, queryfile);
     listAll(listRef)
       .then((res) => {
         console.log(res);

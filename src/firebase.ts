@@ -38,7 +38,7 @@ function _getStorage(app: FirebaseApp): FirebaseStorage {
   return storage;
 }
 
-export const fbRef = ref;
-export const fbStorage = _getStorage(app);
+export const fbRef = (storage: FirebaseStorage, url?: string) => ref(storage, url);
+export const fbStorage = () => _getStorage(app);
 export const fbAuth = _getAuth();
 export const fbAnalytics = getAnalytics(app);
